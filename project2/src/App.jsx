@@ -1,17 +1,16 @@
-import {nav} from './components/nav.jsx'
+import {NavBar} from './components/nav.jsx'
 //import {orgs} from './components/HeroComponents/orgs'
 //import {search} from './components/HeroComponents/search'
 //import {title} from './components/HeroComponents/title'
+//import {HomeButton} from './components/NavComponents/homeButton.jsx'
 
-
-
+// Components need to be capitalized
 
 function App() {
   return(
     <>
-    <p>fhjksdfjksdjfk</p>
-    <nav>dskhjfkldj'dfg'jklsdfskjl'</nav>
-    <p>l;ncksxdnkldfdfnkl</p>
+    <NavBar/>
+    
     </>
   )
 }
