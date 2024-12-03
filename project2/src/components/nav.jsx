@@ -9,26 +9,34 @@ import {LoginButton} from './NavComponents/loginButton.jsx'
 
 export function NavBar(){
     return (
+        <>
     <Stack 
             direction={"row"}
             spacing={2}
             sx={{
-                //justifyContent: "center",
-                //padding: "10%",
+                justifyContent: "space-between", // For horizontal spacing
+                alignItems: "center", // For vertical
                 bgcolor: 'grey',
                 height: 80,
-                borderBottom: 10
+                borderBottom: 10,
+                display: "flex",
+                width: "100%" // This is to ensure the stack takes the whole width
                 
                         }}>
-            <HomeButton/>
-            <Box sx = {{justifyContent: 'flex-end'}}>
+
+    
+            <HomeButton />
+       <Box sx = {{ display: "flex",
+        gap: 5,
+        paddingRight: 5
+       }} >
             <ExtraButtons/>
-            <LoginButton/>
+            <LoginButton  />
 
             </Box>
     
-
         </Stack>
+        </>
     )
     
 }

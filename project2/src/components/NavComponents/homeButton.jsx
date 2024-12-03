@@ -1,5 +1,6 @@
 import { useState  } from "react";
-import {  Button } from "@mui/material";
+import {  Button, Box } from "@mui/material";
+
 
 
 
@@ -13,15 +14,14 @@ export function HomeButton (){
     }
     return(
         <>
-        
-        <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-            <Button variant="contained">agify.io</Button>
+        <Box onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} >
+            <Button variant="contained" >agify.io</Button>
             {isDropDownVisible && <ul>
             <li>genderize.io</li>
             <li>agify.io</li>
             <li>nationalize.io</li>
         </ul>}
-        </div>
+        </Box>
         </>
     )
 }
