@@ -16,7 +16,7 @@ export function Orgs(){
         
         <Stack direction="row" sx={{display:"flex", width:"100%", gap:3.25}}>
             {images.map (item=> (
-                <img style={{width:"10%", height:"10%"}} src={item.path}></img>
+                <img key = {item.name} style={{width:"10%", height:"10%"}} src={item.path}></img>
 
             ))} 
         </Stack>
