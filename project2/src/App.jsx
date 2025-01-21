@@ -12,14 +12,15 @@ function App() {
     <>
     <main>
     <Stack direction={'column'}
-    sx={{display:'flex', gap:15, justifyContent:"center"}}>
+      sx={{display:'flex', gap:15, justifyContent:"center"}}>
     <NavBar/>
     <Title/>
-    <Search></Search>
+    <Search />
+    
     <Orgs/>
     
-
     </Stack>
+   
     </main>
     </>
   )
