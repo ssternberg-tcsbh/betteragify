@@ -1,5 +1,5 @@
 import { Global } from "@emotion/react";
-import { TextField, Button, Stack, Menu, MenuItem } from "@mui/material";
+import { TextField, Button, Stack, Menu, MenuItem, Box } from "@mui/material";
 import { useState, useRef, useEffect } from "react";
 
 const countries = [
@@ -12,9 +12,9 @@ const countries = [
 ];
 
 
+let stringOutput = "uyhbubs"
 
 export function Search(){
-  let stringOutput = ""
   function handleSelect(country){
     setSelectedCountry(country)
     setDropDownOpen(false)
@@ -32,7 +32,7 @@ export function Search(){
   const [selectedCountry,setSelectedCountry] = useState(countries[0])
   const [anchorEl, setAnchorEl]=useState(null)
   const [name, setName]=useState("")
-
+  const [updateString, setUpdateString] = useState("")
 
   async function onClick() {
     let request=""
@@ -42,6 +42,9 @@ export function Search(){
             request += `&country_id=${selectedCountry.id}`;
         }
         console.log(request);
+    }
+    else{
+      setUpdateString("Fail.")
     }
 
     await fetch(request)
@@ -59,10 +62,11 @@ export function Search(){
                 }
             } else {
                 // With country id
-                stringOutput = `${name} in ${selectedCountry.name} is ${json.age} years old.`;
+                stringOutput = `${name} in ${selectedCountry.Name} is ${json.age} years old.`;
             }
 
             console.log(stringOutput); // Output the string
+            setUpdateString(stringOutput)
         })
         .catch((error) => {
             console.error('Error fetching data:', error);
@@ -85,9 +89,9 @@ export function Search(){
         ))}
         </Menu>
         <TextField label="Enter name" value={name} onChange = {(event)=>{setName(event.target.value)}}></TextField>
-      <Button variant="contained" onClick={onClick(stringOutput)}>Search</Button>
-      
+      <Button variant="contained" onClick={()=>onClick(stringOutput)}>Search</Button>
     </Stack>
+    <Box>{updateString}</Box>
 
     </>
   )
